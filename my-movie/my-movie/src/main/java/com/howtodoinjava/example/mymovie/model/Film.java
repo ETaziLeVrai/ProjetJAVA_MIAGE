@@ -1,6 +1,4 @@
-package com.howtodoinjava.example.mydashboard.model;
-
-import java.util.Date;
+package com.howtodoinjava.example.mymovie.model;
 
 public class Film {
 

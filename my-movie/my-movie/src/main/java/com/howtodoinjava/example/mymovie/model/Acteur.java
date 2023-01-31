@@ -1,6 +1,5 @@
-package com.howtodoinjava.example.mydashboard.model;
+package com.howtodoinjava.example.mymovie.model;
 
-import java.util.Date;
 import java.util.List;
 
 public class Acteur {
@@ -32,5 +31,9 @@ public class Acteur {
 
     public List<Film> getFilmographie() {
         return filmographie;
+    }
+
+    public void setFilmographie(List<Film> filmographie) {
+        this.filmographie = filmographie;
     }
 }
