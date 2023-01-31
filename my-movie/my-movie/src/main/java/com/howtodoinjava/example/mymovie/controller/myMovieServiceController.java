@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -83,7 +84,7 @@ public class myMovieServiceController {
     }
 
     @ApiOperation(value = "Update Acteur by their name (nom)", response = Iterable.class, tags = "updateActeurByName")
-    @RequestMapping(value = "/updateActeurByName/{name}")
+    @RequestMapping(value = "/updateActeurByName/{name}", method = RequestMethod.PUT)
     public void updateActeurByName(@PathVariable(value = "name") String name, Acteur act) {
         for (Acteur acteur : this.listActeurs) {
             if(acteur.getNom() == name) {
@@ -93,7 +94,7 @@ public class myMovieServiceController {
     }
 
     @ApiOperation(value = "Delete Acteur by their name (nom)", response = Iterable.class, tags = "deleteActeurByName")
-    @RequestMapping(value = "/deleteActeurByName/{name}")
+    @RequestMapping(value = "/deleteActeurByName/{name}", method = RequestMethod.DELETE)
     public void deleteActeurByName(@PathVariable(value = "name") String name) {
         for (Acteur acteur : this.listActeurs) {
             if(acteur.getNom() == name) {
@@ -134,7 +135,7 @@ public class myMovieServiceController {
     }
 
     @ApiOperation(value = "Update Film by their title (titre)", response = Iterable.class, tags = "updateFilmByTitle")
-    @RequestMapping(value = "/updateFilmByTitle/{title}")
+    @RequestMapping(value = "/updateFilmByTitle/{title}" , method = RequestMethod.PUT)
     public void updateFilmByTitle(@PathVariable(value = "title") String title, Film movie) {
         for (Film film : this.listFilms) {
             if(film.getTitre() == title) {
@@ -144,7 +145,7 @@ public class myMovieServiceController {
     }
 
     @ApiOperation(value = "Delete Acteur by their title (titre)", response = Iterable.class, tags = "deleteFilmByTitle")
-    @RequestMapping(value = "/deleteFilmByTitle/{title}")
+    @RequestMapping(value = "/deleteFilmByTitle/{title}", method = RequestMethod.DELETE)
     public void deleteFilmByTitle(@PathVariable(value = "title") String title) {
         for (Film film : this.listFilms) {
             if(film.getTitre() == title) {
